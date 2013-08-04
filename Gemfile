@@ -1,10 +1,16 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org/'
+# source 'https://rubygems.org'
 ruby '1.9.3'
 gem 'rails', '3.2.13'
+gem 'bootstrap-sass', '2.3.2.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec', '2.5.0'
+  gem 'spork-rails', github: 'railstutorial/spork-rails'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.6'
 end
 
 group :assets do
@@ -25,4 +31,7 @@ group :production do
   gem 'pg', '0.15.1'
 end
 
-gem 'capybara'
+group :test do
+  gem 'selenium-webdriver', '2.0.0'
+  gem 'capybara', '2.1.0'
+end
